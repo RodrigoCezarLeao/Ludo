@@ -1,0 +1,14 @@
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.AssemblyInfoInputs.cache
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.AssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\bin\Debug\net8.0\Ludo.exe
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\bin\Debug\net8.0\Ludo.deps.json
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\bin\Debug\net8.0\Ludo.runtimeconfig.json
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\bin\Debug\net8.0\Ludo.dll
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\bin\Debug\net8.0\Ludo.pdb
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.dll
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\refint\Ludo.dll
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.pdb
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.genruntimeconfig.cache
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\ref\Ludo.dll
