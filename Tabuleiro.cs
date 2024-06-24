@@ -10,35 +10,85 @@ namespace Ludo
     public class Tabuleiro
     {
         public Peao[] Peoes { get; set; }
-        public Tabuleiro() 
-        { 
-            this.Peoes = new Peao[1];
-            this.Peoes[0] = new Peao("G", 1);
-            //this.Peoes[0].Posicao = Helpers.PosicaoSequencialParaCoordenada(54);
-            //this.Peoes[0].Status = 3;
+        public int QntJogadores { get; set; }
+        public Tabuleiro(int qntJogadores)
+        {
+            this.QntJogadores = qntJogadores;
+            this.Peoes = new Peao[qntJogadores * 4];
 
-            /*this.Peoes = new Peao[16];
-            for (int i = 0; i<4; i++)
-            {
-                this.Peoes[i*4] = new Peao("G", i * 4);
-                this.Peoes[i*4 + 1] = new Peao("Y", i * 4 + 1);
-                this.Peoes[i*4 + 2] = new Peao("B", i * 4 + 2);
-                this.Peoes[i*4 + 3] = new Peao("R", i * 4 + 3);
-            }*/
             
+            int[,] posBasePeoes = { {1,1}, {1,3}, {3,1}, {3,3}, {1,11}, {1,13}, {3,11}, {3,13}, {11,11}, {11,13}, {13,11}, {13,13}, {11,1}, {11,3}, {13,1}, {13,3} };
+            for (int i = 0; i < qntJogadores; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    int indiceArrayPeoes = (i * 4 + j);
+                    this.Peoes[indiceArrayPeoes] = new Peao(Helpers.seqPeoes[i], (indiceArrayPeoes + 1), new Posicao(posBasePeoes[indiceArrayPeoes, 0], posBasePeoes[indiceArrayPeoes, 1]));
+                }
+            }            
         }
 
-        public string PosicaoEstaOcupada(Posicao p)
+        public Peao[] PeoesDoJogador(string jogador)
+        {
+            return this.Peoes.Where(x => x.Cor == jogador).ToArray();
+        }
+
+        public Peao[] PeoesDoJogadorQueEstaoNaBase(string jogador)
+        {
+            return this.Peoes.Where(x => x.Cor == jogador && x.Status == 0).ToArray();
+        }
+        public string ImprimirPeoesDaBase(string jogador)
+        {
+            Peao[] temp = this.PeoesDoJogadorQueEstaoNaBase(jogador);
+            return string.Join(", ", temp.Select(x => x.Cor + x.Id));
+        }
+        public bool JogadorTemPeaoNaBase(string jogador)
+        {
+            return this.Peoes.Where(x => x.Cor == jogador && x.Status == 0).ToArray().Length > 0;
+        }
+        public Peao[] PeoesDoJogadorQuePodemAndarNormalmente(string jogador)
+        {
+            return this.Peoes.Where(x => x.Cor == jogador && (x.Status == 1 || x.Status == 4)).ToArray();
+        }
+        public string ImprimirPeoesQuePodemAndarNormalmente(string jogador)
+        {
+            Peao[] temp = this.PeoesDoJogadorQuePodemAndarNormalmente(jogador);
+            return string.Join(", ", temp.Select(x => x.Cor + x.Id));
+        }
+        public bool JogadorTemPeaoQuePodemAndarNormalmente(string jogador)
+        {
+            return this.Peoes.Where(x => x.Cor == jogador && (x.Status == 1 || x.Status == 4)).ToArray().Length > 0;
+        }
+        public Peao[] PeoesDoJogadorQuePodemTerminar(string jogador, int valorDado)
+        {
+            return this.Peoes.Where(x => x.Cor == jogador && x.PeaoPodeTerminar(valorDado)).ToArray();
+        }
+        public string ImprimirPeoesQuePodemTerminar(string jogador, int valorDado)
+        {
+            Peao[] temp = this.PeoesDoJogadorQuePodemTerminar(jogador, valorDado);
+            return string.Join(", ", temp.Select(x => x.Cor + x.Id));
+        }
+        public bool JogadorTemPeaoQuePodemTerminar(string jogador, int valorDado)
+        {
+            return this.Peoes.Where(x => x.Cor == jogador && x.PeaoPodeTerminar(valorDado)).ToArray().Length > 0;
+        }
+
+        public Peao? SelecionarPeaoPeloId(string? id)
+        {
+            return this.Peoes.FirstOrDefault(x => x.Id == id);
+        }
+
+        public Peao? PosicaoEstaOcupada(Posicao p)
         {
             foreach(Peao peao in this.Peoes)
             {
                 if ( (peao.Status > 0) && peao.Posicao.Linha == p.Linha && peao.Posicao.Coluna == p.Coluna)
                 {
-                    return peao.Cor;
+                    return peao;
                 }
             }
 
-            return "";
+            return null;
         }
 
         public void ImprimeTabuleiro()
@@ -52,20 +102,33 @@ namespace Ludo
                 for (int j = 0; j < 15; j++)
                 {
                     Posicao posicaoAtual = new Posicao(i, j);
+
                     int num = Helpers.CoordenadaParaPosicaoSequencial(posicaoAtual);
 
                     if (num == -1)
-                    {   
-                        Console.Write("   ");
+                    {
+                        bool flag = true;
+                        foreach(Peao peao in this.Peoes)
+                        {
+                            if (peao.Posicao.Linha == posicaoAtual.Linha && peao.Posicao.Coluna == posicaoAtual.Coluna)
+                            {
+                                Console.Write($" {peao.Cor}{peao.Id} ");
+                                flag = false;
+                            }
+                        }
+                        if (flag)
+                        {
+                            Console.Write("    ");
+                        }
                     }else
                     {
-                        string temp = PosicaoEstaOcupada(posicaoAtual);
-                        if (temp != "")
+                        Peao? temp = PosicaoEstaOcupada(posicaoAtual);
+                        if (temp != null)
                         {
-                            Console.Write($" {temp} ");
+                            Console.Write($" {temp.Cor}{temp.Id} ");
                         }else
                         {
-                            Console.Write(" _ ");
+                            Console.Write(" __ ");
                         }
                     }
                 }

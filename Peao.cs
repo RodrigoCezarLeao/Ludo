@@ -14,16 +14,23 @@ namespace Ludo
 
         public int Status { get; set; }
         // 0 = BASE
-        // 1 = EM JOGO
+        // 1 = EM JOGO (APÓS VOLTA DE ÍNDICE)
+        // 4 = EM JOGO (ANTES DA VOLTA DE ÍNDICE)
         // 2 = CHEGADA
         // 3 = EM JOGO (CASAS ESPECIAIS)
-        // 4 = 'PRIMEIRA VOLTA'
 
         public Peao(string cor, int num) 
         { 
             this.Cor = cor;
             this.Status = 0;
-            this.Id = $"P{num}";
+            this.Id = num.ToString("X");
+        }
+        public Peao(string cor, int num, Posicao p)
+        {
+            this.Cor = cor;
+            this.Status = 0;
+            this.Id = num.ToString("X");
+            this.Posicao = p;
         }
         public Peao() { }
 
@@ -154,40 +161,49 @@ namespace Ludo
             this.Posicao = Helpers.PosicaoSequencialParaCoordenada(posicaoAtualSequencial);
         }
         
-        // 0 - Passou a vez
-        // 1 - Sair da base
-        // 2 - Andar com o peão no tabuleiro
-        public int JogarDado()
+        public void TirarPeaoDaBase()
         {
-            // Peão já finalizado
-            if (this.Status == 2)
-            {
-                return 0;
-            }
-
-            Random random = new Random();
-            int valorDado = random.Next(1,7);
-
-            Console.WriteLine($"Peão {this.Cor} ({this.Id}) tirou {valorDado} no dado.");
-
-            // Saída da base
-            if (this.Status == 0 && valorDado == 6)
-            {
-                this.Posicao = Helpers.PosicaoSequencialParaCoordenada(PosicaoSequencialInicialPorCor(this.Cor));
-                this.AndarComPeao(valorDado);                
-                this.Status = 4;
-                return 1;
-            }
-            if(this.Status == 0 && valorDado != 6)
-            {
-                return 0;
-            }
-
-
-            // Andar com o peão no tabuleiro
-            this.AndarComPeao(valorDado);
-
-            return 2;
+            this.Posicao = Helpers.PosicaoSequencialParaCoordenada(PosicaoSequencialInicialPorCor(this.Cor));
+            this.Status = 4;
         }
+
+        public bool PeaoPodeTerminar(int valorDado)
+        {
+            if (this.Status == 3)
+            {
+                int posicaoSequencial = Helpers.CoordenadaParaPosicaoSequencial(this.Posicao);
+
+                if (this.Cor == "G")
+                {
+                    if (posicaoSequencial + valorDado == 56 + 1)
+                        return true;
+                    else
+                        return false;
+                }
+                else if (this.Cor == "Y")
+                {
+                    if (posicaoSequencial + valorDado == 61 + 1)
+                        return true;
+                    else
+                        return false;
+                }
+                else if (this.Cor == "B")
+                {
+                    if (posicaoSequencial + valorDado == 66 + 1)
+                        return true;
+                    else
+                        return false;
+                }
+                else if (this.Cor == "R")
+                {
+                    if (posicaoSequencial + valorDado == 71 + 1)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            return false;
+        }
+
     }
 }

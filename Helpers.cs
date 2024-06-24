@@ -8,6 +8,7 @@ namespace Ludo
 {
     public static class Helpers
     {
+        public static string[] seqPeoes = new string[4] { "G", "Y", "B", "R" };
         public static Posicao PosicaoSequencialParaCoordenada(int num)
         {
             Posicao p = new Posicao();
@@ -335,6 +336,19 @@ namespace Ludo
             }
 
             return -1;
+        }
+
+        public static int JogarDado()
+        {
+            Random random = new Random();
+            int valorDado = random.Next(1, 7);
+            return valorDado;            
+        }
+
+        public static void Aguarde(int segundos = 5)
+        {
+            Console.WriteLine($"...");
+            Thread.Sleep(segundos * 1000);
         }
     }
 }

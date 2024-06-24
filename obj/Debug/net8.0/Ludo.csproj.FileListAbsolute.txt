@@ -12,3 +12,4 @@ C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\refint\Ludo.dll
 C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.pdb
 C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.genruntimeconfig.cache
 C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\ref\Ludo.dll
+C:\Users\Rodrigo\Desktop\Ludo\Ludo\obj\Debug\net8.0\Ludo.sourcelink.json
