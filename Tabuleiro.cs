@@ -16,16 +16,23 @@ namespace Ludo
             this.QntJogadores = qntJogadores;
             this.Peoes = new Peao[qntJogadores * 4];
 
-            
-            int[,] posBasePeoes = { {1,1}, {1,3}, {3,1}, {3,3}, {1,11}, {1,13}, {3,11}, {3,13}, {11,11}, {11,13}, {13,11}, {13,13}, {11,1}, {11,3}, {13,1}, {13,3} };
             for (int i = 0; i < qntJogadores; i++)
             {
                 for (int j = 0; j < 4; j++)
                 {
                     int indiceArrayPeoes = (i * 4 + j);
-                    this.Peoes[indiceArrayPeoes] = new Peao(Helpers.seqPeoes[i], (indiceArrayPeoes + 1), new Posicao(posBasePeoes[indiceArrayPeoes, 0], posBasePeoes[indiceArrayPeoes, 1]));
+                    this.Peoes[indiceArrayPeoes] = new Peao(Helpers.seqPeoes[i], (indiceArrayPeoes), new Posicao(Helpers.posBasePeoes[indiceArrayPeoes, 0], Helpers.posBasePeoes[indiceArrayPeoes, 1]));
                 }
             }            
+        }
+
+        public bool JogadorGanhouOJogo(string corJogador)
+        {
+            Peao[] peoes = this.PeoesDoJogador(corJogador);
+
+            Peao[] peoesFinalizados = peoes.Where(x => x.Status == 2).ToArray();
+
+            return peoesFinalizados.Length == 4;
         }
 
         public Peao[] PeoesDoJogador(string jogador)
@@ -78,22 +85,38 @@ namespace Ludo
             return this.Peoes.FirstOrDefault(x => x.Id == id);
         }
 
-        public Peao? PosicaoEstaOcupada(Posicao p)
+        public Peao[] PosicaoEstaOcupada(Posicao p)
         {
+            Peao[] peoes = new Peao[16];
+            int cont = 0;
             foreach(Peao peao in this.Peoes)
             {
                 if ( (peao.Status > 0) && peao.Posicao.Linha == p.Linha && peao.Posicao.Coluna == p.Coluna)
                 {
-                    return peao;
+                    peoes[cont] = peao;
+                    cont++;
+                }
+            }
+            
+
+            Peao[] retornoPeoes = new Peao[cont];
+            int cont2 = 0;
+            foreach(Peao peao in peoes)
+            {
+                if (peao != null)
+                {
+                    retornoPeoes[cont2] = peao;
+                    cont2++;
                 }
             }
 
-            return null;
+            return retornoPeoes;
         }
 
         public void ImprimeTabuleiro()
         {
             //15 x 15
+            string legenda = "";
 
             Console.WriteLine("\n----------------------------------------------------------------------");
 
@@ -101,6 +124,27 @@ namespace Ludo
             {
                 for (int j = 0; j < 15; j++)
                 {
+                    if (i == 0 && j == 2)
+                    {
+                        Console.Write(" G");
+                        continue;
+                    }
+                    else if (i == 0 && j == 13)
+                    {
+                        Console.Write("Y ");
+                        continue;
+                    }
+                    else if (i == 10 && j == 2)
+                    {
+                        Console.Write(" R");
+                        continue;
+                    }
+                    else if (i == 10 && j == 13)
+                    {
+                        Console.Write("B ");
+                        continue;
+                    }
+
                     Posicao posicaoAtual = new Posicao(i, j);
 
                     int num = Helpers.CoordenadaParaPosicaoSequencial(posicaoAtual);
@@ -122,11 +166,21 @@ namespace Ludo
                         }
                     }else
                     {
-                        Peao? temp = PosicaoEstaOcupada(posicaoAtual);
-                        if (temp != null)
+                        Peao[] temp = PosicaoEstaOcupada(posicaoAtual);
+                        if (temp.Length == 1)
                         {
-                            Console.Write($" {temp.Cor}{temp.Id} ");
-                        }else
+                            Console.Write($" {temp[0].Cor}{temp[0].Id} ");
+                        }else if (temp.Length > 1)
+                        {
+                            legenda += "\n@@";
+                            foreach(Peao p in temp)
+                            {
+                                legenda += $" {p.Cor}{p.Id} / ";
+                            }
+                            Console.Write(" @@ ");
+                            legenda += "\n";
+                        }
+                        else
                         {
                             Console.Write(" __ ");
                         }
@@ -134,6 +188,12 @@ namespace Ludo
                 }
 
                 Console.WriteLine();
+            }
+
+            if (legenda != null && legenda != "")
+            {
+                Console.WriteLine("\nLegenda (Casas Compartilhadas)");
+                Console.WriteLine(legenda);
             }
 
             Console.WriteLine("\n----------------------------------------------------------------------");

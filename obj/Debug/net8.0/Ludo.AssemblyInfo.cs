@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ludo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f12cf1d7e7f7b74efda042f6cef698e44431599")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08a490cc6bfcea9670bc47daace819c533c55a60")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ludo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ludo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

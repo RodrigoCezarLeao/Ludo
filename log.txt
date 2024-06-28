@@ -1,0 +1,654 @@
+Bem vindo ao jogo Ludo!
+Quantos jogadores (de 2 até 4) ?
+O jogo terá 2 jogadores.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 2 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G0, G1, G2, G3 da base.
+O Jogador G tirou 5 no dado.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y4, Y5, Y6, Y7 da base.
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+- Uma possível jogada é andar com o peao G0 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+- Uma possível jogada é andar com o peao Y4 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 3 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y5, Y6, Y7 da base.
+O Jogador Y tirou 3 no dado.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 3 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 3 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+- Uma possível jogada é terminar o peao Y4 no tabuleiro.
+O Jogador Y tirou 1 no dado.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G1, G2, G3 da base.
+O Jogador G tirou 1 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 5 no dado.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 2 no dado.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y6, Y7 da base.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 3 no dado.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 2 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 18 no dado.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 2 no dado.
+- Uma possível jogada é andar com o peao Y5 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 3 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 4 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+- Uma possível jogada é terminar o peao G0 no tabuleiro.
+O Jogador G tirou 4 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 1 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 4 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 2 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 4 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 5 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 1 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 3 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 1 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 3 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 5 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 3 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+- Uma possível jogada é terminar o peao Y5 no tabuleiro.
+O Jogador Y tirou 4 no dado.
+O Jogador Y passou a segunda jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 3 no dado.
+- Uma possível jogada é andar com o peao G1 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar os peoes Y6, Y7 da base.
+O Jogador Y tirou 5 no dado.
+- Uma possível jogada é andar com o peao Y7 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 4 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+- Uma possível jogada é andar com o peao Y7 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é retirar o peao Y6 da base.
+- Uma possível jogada é andar com o peao Y7 no tabuleiro.
+O Jogador Y tirou 3 no dado.
+- Uma possível jogada é andar com os peoes Y6, Y7 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G2, G3 da base.
+O Jogador G tirou 4 no dado.
+- Uma possível jogada é andar com o peao G2 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+- Uma possível jogada é andar com os peoes Y6, Y7 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+- Uma possível jogada é andar com o peao G2 no tabuleiro.
+- Uma possível jogada é terminar o peao G1 no tabuleiro.
+O Jogador G tirou 2 no dado.
+- Uma possível jogada é andar com o peao G2 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 5 no dado.
+- Uma possível jogada é andar com os peoes Y6, Y7 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 2 no dado.
+- Uma possível jogada é andar com o peao G2 no tabuleiro.
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 25 no dado.
+- Uma possível jogada é andar com os peoes Y6, Y7 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 2 no dado.
+- Uma possível jogada é andar com o peao G2 no tabuleiro.
+
+O Peão (2) voltou foi capturado!
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 3 no dado.
+- Uma possível jogada é andar com os peoes Y6, Y7 no tabuleiro.
+O Jogador Y tirou 3 no dado.
+- Uma possível jogada é andar com os peoes Y6, Y7 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 2 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 2 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 2 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 2 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+O Jogador G passou a jogada.
+
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+- Uma possível jogada é terminar o peao Y7 no tabuleiro.
+O Jogador Y tirou 5 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 2 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 4 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 5 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 2 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 5 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 4 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 1 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 2 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 3 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 1 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 4 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 4 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 6 no dado.
+- Uma possível jogada é retirar os peoes G2, G3 da base.
+O Jogador G tirou 5 no dado.
+- Uma possível jogada é andar com o peao G3 no tabuleiro.
+
+O Peão (3) voltou foi capturado!
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 1 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+O Jogador Y tirou 3 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 1 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 5 no dado.
+- Uma possível jogada é andar com o peao Y6 no tabuleiro.
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 1 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+O Jogador G passou a jogada.
+
+
+Vez do Jogador Y: 
+
+O Jogador Y tirou 6 no dado.
+O Jogador Y passou a jogada.
+
+
+Vez do Jogador G: 
+
+O Jogador G tirou 5 no dado.
+O Jogador G passou a jogada.
+
+
+
+Bem vindo ao jogo Ludo!
+Quantos jogadores (de 2 até 4) ?
+O jogo terá 4 jogadores.
+
+Bem vindo ao jogo Ludo!
+Quantos jogadores (de 2 até 4) ?
+O jogo terá 4 jogadores.
+
+Bem vindo ao jogo Ludo!
+Quantos jogadores (de 2 até 4) ?
+O jogo terá 4 jogadores.
+
+Bem vindo ao jogo Ludo!
+Quantos jogadores (de 2 até 4) ?
+O jogo terá 4 jogadores.
+

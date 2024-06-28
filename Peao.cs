@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,7 +33,7 @@ namespace Ludo
             this.Id = num.ToString("X");
             this.Posicao = p;
         }
-        public Peao() { }
+        public Peao() {}
 
 
         public int PosicaoSequencialInicialPorCor(string cor)
@@ -57,7 +58,7 @@ namespace Ludo
             return -1;
         }
 
-        public void AndarComPeao(int valorDado)
+        public void AndarComPeao(int valorDado, Peao[] peoesDoTabuleiro, ref bool ocorreuCaptura)
         {
             int posicaoAtualSequencial = Helpers.CoordenadaParaPosicaoSequencial(this.Posicao);
 
@@ -159,6 +160,33 @@ namespace Ludo
             }
 
             this.Posicao = Helpers.PosicaoSequencialParaCoordenada(posicaoAtualSequencial);
+
+            // Lógica da captura de peão
+            Peao[] peoesNaCasaAtual = peoesDoTabuleiro.Where(x => Helpers.CoordenadaParaPosicaoSequencial(x.Posicao) == posicaoAtualSequencial).ToArray();
+            if (peoesNaCasaAtual.Length > 1 && !Helpers.casasSegurasGerais.Contains(posicaoAtualSequencial))
+            {
+                Log log = new Log();
+                string logBatch = "";
+
+                ocorreuCaptura = true;
+
+                foreach(Peao p  in peoesNaCasaAtual)
+                {
+                    if (p.Id != this.Id && p.Cor != this.Cor)
+                    {
+                        p.Status = 0;
+                        Helpers.LogText($"O Peão ({p.Id}) voltou foi capturado!", ref logBatch);
+                        int idx = Convert.ToInt32(p.Id, 16);
+                        p.Posicao = new Posicao(Helpers.posBasePeoes[idx, 0], Helpers.posBasePeoes[idx, 1]);
+                    }
+                }
+
+                log.LogFlush(ref logBatch);
+            }
+            else
+            {
+                ocorreuCaptura = false;
+            }
         }
         
         public void TirarPeaoDaBase()

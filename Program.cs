@@ -8,35 +8,42 @@ namespace Ludo
     {
         public static void Main()
         {
-            Console.WriteLine("Bem vindo ao jogo Ludo!");
-            Console.WriteLine("Quantos jogadores (de 2 até 4) ?");
+            Log log = new Log();
+            string logBatch = "";
+            
+            Helpers.LogText("Bem vindo ao jogo Ludo!", ref logBatch);
+            Helpers.LogText("Quantos jogadores (de 2 até 4) ?", ref logBatch);
             int.TryParse(Console.ReadLine(), null, out int qntJogadores);
 
             if (qntJogadores > 4 || qntJogadores < 2)
                 qntJogadores = 2;
 
-            Console.WriteLine($"O jogo terá {qntJogadores} jogadores.");            
+            Helpers.LogText($"O jogo terá {qntJogadores} jogadores.", ref logBatch);
+
             Tabuleiro t = new Tabuleiro(qntJogadores);
             Helpers.Aguarde();
-            
 
-            while (true)
+            log.LogFlush(ref logBatch);
+
+            bool continuarJogo = true;            
+
+            while (continuarJogo)
             {
                 for (int jogador = 0; jogador < qntJogadores; jogador++)
                 {
                     string corJogador = Helpers.seqPeoes[jogador];
-                    Console.Clear();
-                    Console.WriteLine($"Vez do Jogador {corJogador}: \n");
+                    Console.Clear();                    
+                    Helpers.LogText($"Vez do Jogador {corJogador}: \n", ref logBatch);
                     t.ImprimeTabuleiro();
-
+                                        
                     Console.WriteLine("Pressione uma tecla para rolar o dado.");
                     Console.ReadLine();
 
-                    int retornoJogada = fazerJogada(t, jogador);
+                    int retornoJogada = fazerJogada(t, jogador, ref logBatch);
 
                     if (retornoJogada == 0)
-                    {
-                        Console.WriteLine($"O Jogador {corJogador} passou a jogada.\n");
+                    {                        
+                        Helpers.LogText($"O Jogador {corJogador} passou a jogada.\n", ref logBatch);
                         Helpers.Aguarde(3);
                     }
                     else if (retornoJogada == 2)
@@ -44,26 +51,59 @@ namespace Ludo
                         t.ImprimeTabuleiro();
                         Helpers.Aguarde();
                     }
-                    else if (retornoJogada == 1 || retornoJogada == 3)
+                    else if (retornoJogada == 1 || retornoJogada == 3 || retornoJogada == 4)
                     {
                         Console.WriteLine("Pressione uma tecla para rolar o dado novamente.");
                         Console.ReadLine();
 
-                        retornoJogada = fazerJogada(t, jogador);
+                        int novoValorDado = Helpers.JogarDado();
+
+                        retornoJogada = fazerJogada(t, jogador, ref logBatch, novoValorDado);
                         Helpers.Aguarde(3);
 
-                        if (retornoJogada == 0)
+                        if (novoValorDado == 6 || retornoJogada == 3 || retornoJogada == 4)
                         {
-                            Console.WriteLine($"O Jogador {corJogador} passou a segunda jogada.\n");
+                            Helpers.LogText("Pressione uma tecla para rolar o dado pela terceira e última vez.", ref logBatch);
+                            Console.ReadLine();
+
+                            retornoJogada = fazerJogada(t, jogador, ref logBatch);
                             Helpers.Aguarde(3);
+
+                            if (retornoJogada == 0)
+                            {
+                                Helpers.LogText($"O Jogador {corJogador} passou a terceira jogada.\n", ref logBatch);
+                                Helpers.Aguarde(3);
+                            }
+                            else
+                            {
+                                t.ImprimeTabuleiro();
+                                Helpers.Aguarde();
+                            }
                         }
                         else
                         {
-                            t.ImprimeTabuleiro();
-                            Helpers.Aguarde();
-                        }                        
+                            if (retornoJogada == 0)
+                            {
+                                Helpers.LogText($"O Jogador {corJogador} passou a segunda jogada.\n", ref logBatch);
+                                Helpers.Aguarde(3);
+                            }
+                            else
+                            {
+                                t.ImprimeTabuleiro();
+                                Helpers.Aguarde();
+                            }
+                        }
                     }
 
+                    if (t.JogadorGanhouOJogo(corJogador))
+                    {
+                        continuarJogo = false;
+                        Helpers.LogText($"\nO Jogador {corJogador} venceu o jogo!!!\n", ref logBatch);
+                        t.ImprimeTabuleiro();
+                        break;
+                    }
+
+                    log.LogFlush(ref logBatch);
 
                 }
             }
@@ -75,14 +115,17 @@ namespace Ludo
         // 1 - Tirar Peão da Base
         // 2 - Andar normalmente no tabuleiro
         // 3 - Finalizar Peão
-        public static int fazerJogada(Tabuleiro t, int jogador)
-        {
+        // 4 - Ocorreu Captura
+        public static int fazerJogada(Tabuleiro t, int jogador, ref string logBatch, int valorDoDado = -1)
+        {   
+
             int retorno = 0;
+            bool ocorreuCaptura = false;
 
-            int valorDado = Helpers.JogarDado();
+            int valorDado = valorDoDado == -1 ? Helpers.JogarDado() : valorDoDado;            
             string corJogador = Helpers.seqPeoes[jogador];
-            Console.WriteLine($"O Jogador {corJogador} tirou {valorDado} no dado.");
-
+            
+            Helpers.LogText($"O Jogador {corJogador} tirou {valorDado} no dado.", ref logBatch);
 
             Peao[] peoesDisponiveisParaJogar = new Peao[4];
             int contPeoesDisponiveisParaJogar = 0;
@@ -108,11 +151,11 @@ namespace Ludo
                 string peoes = t.ImprimirPeoesDaBase(corJogador);
                 if (!peoes.Contains(","))
                 {
-                    Console.WriteLine($"- Uma possível jogada é retirar o peao {peoes} da base.");
+                    Helpers.LogText($"- Uma possível jogada é retirar o peao {peoes} da base.", ref logBatch);
                 }
                 else
                 {
-                    Console.WriteLine($"- Uma possível jogada é retirar os peoes {peoes} da base.");
+                    Helpers.LogText($"- Uma possível jogada é retirar os peoes {peoes} da base.", ref logBatch);
                 }
 
                 // Selecionar Peões Jogáveis
@@ -128,11 +171,11 @@ namespace Ludo
                 string peoes = t.ImprimirPeoesQuePodemAndarNormalmente(corJogador);
                 if (!peoes.Contains(","))
                 {
-                    Console.WriteLine($"- Uma possível jogada é andar com o peao {peoes} no tabuleiro.");
+                    Helpers.LogText($"- Uma possível jogada é andar com o peao {peoes} no tabuleiro.", ref logBatch);
                 }
                 else
                 {
-                    Console.WriteLine($"- Uma possível jogada é andar com os peoes {peoes} no tabuleiro.");
+                    Helpers.LogText($"- Uma possível jogada é andar com os peoes {peoes} no tabuleiro.", ref logBatch);
                 }
 
                 // Selecionar Peões Jogáveis
@@ -148,11 +191,11 @@ namespace Ludo
                 string peoes = t.ImprimirPeoesQuePodemTerminar(corJogador, valorDado);
                 if (!peoes.Contains(","))
                 {
-                    Console.WriteLine($"- Uma possível jogada é terminar o peao {peoes} no tabuleiro.");
+                    Helpers.LogText($"- Uma possível jogada é terminar o peao {peoes} no tabuleiro.", ref logBatch);
                 }
                 else
                 {
-                    Console.WriteLine($"- Uma possível jogada é terminar os peoes {peoes} no tabuleiro.");
+                    Helpers.LogText($"- Uma possível jogada é terminar os peoes {peoes} no tabuleiro.", ref logBatch);
                 }
 
                 // Selecionar Peões Jogáveis
@@ -178,7 +221,7 @@ namespace Ludo
                     Console.WriteLine("\nDigite o ID do peão que você quer jogar: ");
                     string id = Console.ReadLine();
 
-                    peaoSelecionado = peoesDisponiveisParaJogar.FirstOrDefault(x => x.Id == id);
+                    peaoSelecionado = (id == null) ? null : peoesDisponiveisParaJogar.FirstOrDefault(x => x.Id == id.ToUpper());
                 }
 
                 if (peaoSelecionado != null)
@@ -190,17 +233,25 @@ namespace Ludo
                     }
                     else if (peaoSelecionado.Status == 1 || peaoSelecionado.Status == 4)
                     {
-                        peaoSelecionado.AndarComPeao(valorDado);
-                        retorno = 2;
+                        peaoSelecionado.AndarComPeao(valorDado, t.Peoes, ref ocorreuCaptura);
+
+                        if (ocorreuCaptura)
+                            retorno = 4;
+                        else
+                            retorno = 2;
                     }
                     else if (peaoSelecionado.Status == 3)
                     {
-                        peaoSelecionado.AndarComPeao(valorDado);
-                        retorno = 3;
+                        peaoSelecionado.AndarComPeao(valorDado, t.Peoes, ref ocorreuCaptura);
+
+                        if (ocorreuCaptura)
+                            retorno = 4;
+                        else
+                            retorno = 3;
                     }
                 }
             }
-
+            
             return retorno;
         }
     }

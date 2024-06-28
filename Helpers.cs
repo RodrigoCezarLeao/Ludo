@@ -9,6 +9,8 @@ namespace Ludo
     public static class Helpers
     {
         public static string[] seqPeoes = new string[4] { "G", "Y", "B", "R" };
+        public static int[] casasSegurasGerais = new int[8] {1, 9, 14, 22, 27, 35, 40, 48};    
+        public static int[,] posBasePeoes = { { 1, 1 }, { 1, 3 }, { 3, 1 }, { 3, 3 }, { 1, 11 }, { 1, 13 }, { 3, 11 }, { 3, 13 }, { 11, 11 }, { 11, 13 }, { 13, 11 }, { 13, 13 }, { 11, 1 }, { 11, 3 }, { 13, 1 }, { 13, 3 } };
         public static Posicao PosicaoSequencialParaCoordenada(int num)
         {
             Posicao p = new Posicao();
@@ -349,6 +351,12 @@ namespace Ludo
         {
             Console.WriteLine($"...");
             Thread.Sleep(segundos * 1000);
+        }
+
+        public static void LogText(string text, ref string logBatch)
+        {
+            Console.WriteLine(text);
+            logBatch += text + "\n";
         }
     }
 }
